@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="AppFutebol.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:AppFutebol"
+    xmlns:views="clr-namespace:AppFutebol.Views"
+    Shell.NavBarHasShadow="True"
+    Shell.BackgroundColor="#06AA48"
+    Shell.TabBarBackgroundColor="#06AA48"
+    Shell.TabBarUnselectedColor="White"
+    Shell.TabBarTitleColor="Black">
+
+    <TabBar>
+        <ShellContent
+            Title="Inicio"
+            ContentTemplate="{DataTemplate local:MainPage}"
+            Route="MainPage" 
+            Icon="home_icon"/>
+
+        <ShellContent
+            Title="Tabela"
+            ContentTemplate="{DataTemplate views:LeaguePage}"
+            Route="LeaguePage" 
+            Icon="tabela_icon"/>
+
+        <ShellContent
+            Title="Artilheiros"
+            ContentTemplate="{DataTemplate views:TopScoretsPage}"
+            Route="TopScoretsPage"
+            Icon="bola_icon"/>
+    </TabBar>
+</Shell>

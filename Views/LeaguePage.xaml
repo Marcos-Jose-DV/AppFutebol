@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppFutebol.Views.LeaguePage"
+             Title="BRASILEIRÃO SÉRIE A">
+    <ScrollView>
+        <Grid>
+            <VerticalStackLayout>
+                <CollectionView Margin="5"
+                           ItemsSource="{Binding Standings}" 
+                           EmptyView="Nenhum item encontrado"
+                           ItemsUpdatingScrollMode="KeepLastItemInView" 
+                           VerticalScrollBarVisibility="Always">
+                    <CollectionView.Header>
+                        <Label Text="{Binding League}" HorizontalOptions="Center" Margin="0,20" FontSize="20" FontAttributes="Bold"/>
+                    </CollectionView.Header>
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout Orientation="Vertical"/>
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+
+                            <Frame HasShadow="True" Margin="5" Padding="5" BorderColor="White" BackgroundColor="{Binding BgColor, Converter={StaticResource StringToColor}}">
+                                <Grid ColumnDefinitions="Auto,*" >
+                                    <HorizontalStackLayout Margin="5,0" Padding="5" Spacing="5">
+                                        <Label WidthRequest="20" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="{Binding Overall_league_position}" />
+                                        <Image Source="{Binding Team_badge}" WidthRequest="40"  VerticalOptions="Center" Aspect="AspectFit" HorizontalOptions="Center"/>
+                                        <Label MaximumWidthRequest="100" LineBreakMode="TailTruncation" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="{Binding Team_name}" />
+                                    </HorizontalStackLayout>
+
+                                    <HorizontalStackLayout Grid.Column="1" Margin="0,5" Padding="5" Spacing="5"  HorizontalOptions="End">
+                                        <Grid ColumnDefinitions="20,20,20,20,20,20" RowDefinitions="20,20" VerticalOptions="Center" HorizontalOptions="Center">
+                                            <Label Grid.Column="0" Grid.Row="0" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="Pts" TextTransform="Uppercase" FontAttributes="Bold"/>
+                                            <Label Grid.Column="0" Grid.Row="1" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="{Binding Overall_league_PTS}" />
+
+                                            <Label Grid.Column="1" Grid.Row="0" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="PJ" TextTransform="Uppercase" FontAttributes="Bold"/>
+                                            <Label Grid.Column="1" Grid.Row="1" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="{Binding Overall_league_W}" />
+
+                                            <Label Grid.Column="2" Grid.Row="0" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="VIT" TextTransform="Uppercase" FontAttributes="Bold"/>
+                                            <Label Grid.Column="2" Grid.Row="1" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="{Binding Overall_league_D}" />
+
+                                            <Label Grid.Column="3" Grid.Row="0" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="E" TextTransform="Uppercase" FontAttributes="Bold"/>
+                                            <Label Grid.Column="3" Grid.Row="1" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="{Binding Overall_league_L}" />
+
+                                            <Label Grid.Column="4" Grid.Row="0" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="GM" TextTransform="Uppercase" FontAttributes="Bold"/>
+                                            <Label Grid.Column="4" Grid.Row="1" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="{Binding Overall_league_GF}" />
+
+                                            <Label Grid.Column="5" Grid.Row="0" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="GC" TextTransform="Uppercase" FontAttributes="Bold"/>
+                                            <Label Grid.Column="5" Grid.Row="1" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="{Binding Overall_league_GA}" />
+                                        </Grid>
+                                    </HorizontalStackLayout>
+
+                                </Grid>
+                            </Frame>
+
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+                <Frame Margin="10" HasShadow="True" BorderColor="#dadce0" BackgroundColor="#f8f9fa">
+                    <VerticalStackLayout>
+                        <HorizontalStackLayout Margin="0,0,0,10">
+                            <Label Text="Qualificação/Rebaixamento" TextColor="{StaticResource Black}" FontAttributes="Bold"/>
+                        </HorizontalStackLayout>
+                        <Grid RowDefinitions="Auto,Auto,Auto,Auto" ColumnDefinitions="10,Auto" RowSpacing="10" ColumnSpacing="10">
+                            <Rectangle Grid.Row="0" BackgroundColor="#4285F4" WidthRequest="10" HeightRequest="10"/>
+                            <Rectangle Grid.Row="1" BackgroundColor="#FA7B17" WidthRequest="10" HeightRequest="10"/>
+                            <Rectangle Grid.Row="2" BackgroundColor="#34A853" WidthRequest="10" HeightRequest="10"/>
+                            <Rectangle Grid.Row="3" BackgroundColor="#EA4335" WidthRequest="10" HeightRequest="10"/>
+                            <Label Grid.Row="0" Grid.Column="1" Text="Fase de grupos da Copa Libertadores" TextColor="{StaticResource Black}"/>
+                            <Label Grid.Row="1" Grid.Column="1" Text="Qualificatórias da Copa Libertadores" TextColor="{StaticResource Black}"/>
+                            <Label Grid.Row="2" Grid.Column="1" Text="Fase de grupos da Copa Sul-Americana" TextColor="{StaticResource Black}"/>
+                            <Label Grid.Row="3" Grid.Column="1" Text="Rebaixamento" TextColor="{StaticResource Black}"/>
+                        </Grid>
+                    </VerticalStackLayout>
+                </Frame>
+            </VerticalStackLayout>
+
+            <Grid Grid.Row="2" IsVisible="{Binding IsBusy}" Grid.RowSpan="3">
+                <BoxView Color="{StaticResource White}"/>
+                <VerticalStackLayout HorizontalOptions="Center"
+                  VerticalOptions="Center">
+                    <ActivityIndicator IsRunning="True"
+                    Color="#06AA48"
+                    HorizontalOptions="Center"/>
+                    <Label Text="Carregando..." HorizontalOptions="Center"/>
+                </VerticalStackLayout>
+            </Grid>
+        </Grid>
+    </ScrollView>
+</ContentPage>

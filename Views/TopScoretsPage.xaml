@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppFutebol.Views.TopScoretsPage"
+             Title="BRASILEIRÃO SÉRIE A">
+
+    <ScrollView>
+        <Grid>
+            <VerticalStackLayout>
+                <CollectionView Margin="5"
+                       ItemsSource="{Binding Top}" 
+                       EmptyView="Nenhum item encontrado"
+                       ItemsUpdatingScrollMode="KeepLastItemInView" 
+                       VerticalScrollBarVisibility="Always">
+                    <CollectionView.Header>
+                        <Label Text="Artilheiros do Brasileirão 2023" HorizontalOptions="Center" Margin="0,20" FontSize="20" FontAttributes="Bold"/>
+                    </CollectionView.Header>
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout Orientation="Vertical"/>
+                    </CollectionView.ItemsLayout>
+                    
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame HasShadow="True" Margin="5" Padding="15" BorderColor="White" BackgroundColor="{Binding BgColor, Converter={StaticResource StringToColor}}">
+                                <Grid ColumnDefinitions="Auto,*" >
+                                    <HorizontalStackLayout Margin="5,0" Padding="5" Spacing="5">
+                                        <Label WidthRequest="20" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="{Binding Player_place, StringFormat='{0}.'}" TextColor="#06AA48" />
+                                        <Label LineBreakMode="TailTruncation" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="{Binding Player_name}" />
+                                        <Label>
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="("/>
+                                                    <Span Text="{Binding Team_name}" FontAttributes="Bold"/>
+                                                    <Span Text=")"/>
+
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
+                                        <Label WidthRequest="20" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="{Binding Goals}" />
+                                        <Image WidthRequest="20" Source="bola_icon"/>
+                                    </HorizontalStackLayout>
+                                </Grid>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </VerticalStackLayout>
+
+            <Grid Grid.Row="2" IsVisible="{Binding IsBusy}" Grid.RowSpan="3">
+                <BoxView Color="{StaticResource White}"/>
+                <VerticalStackLayout HorizontalOptions="Center"
+                  VerticalOptions="Center">
+                    <ActivityIndicator IsRunning="True"
+                    Color="#06AA48"
+                    HorizontalOptions="Center"/>
+                    <Label Text="Carregando..." HorizontalOptions="Center"/>
+                </VerticalStackLayout>
+            </Grid>
+        </Grid>
+    </ScrollView>
+</ContentPage>

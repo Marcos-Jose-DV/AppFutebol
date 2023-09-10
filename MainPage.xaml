@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppFutebol.MainPage"
+             xmlns:models="clr-namespace:AppFutebol.Models"
+             Title="BRASILEIRÃO SÉRIE A">
+    <RefreshView IsRefreshing="False" >
+        <ScrollView>
+            <Grid RowDefinitions="Auto,100,*" Margin="0,20">
+
+                <HorizontalStackLayout Margin="0,-20" Grid.Row="1" HorizontalOptions="Center" Spacing="20">
+                    <ImageButton Grid.Column="0" Margin="10" WidthRequest="50" Source="seta_esq_icon" Command="{Binding BackDayCommand}"/>
+                    <VerticalStackLayout VerticalOptions="Center" Spacing="10">
+                        <Label Grid.Row="1"  HorizontalOptions="Center" VerticalOptions="Center" Text="{Binding Mes}" FontAttributes="Bold" TextColor="Black"/>
+                        <Frame Padding="0" BackgroundColor="#06AA48" HasShadow="True" WidthRequest="50" HeightRequest="50">
+                            <Label  HorizontalOptions="Center" VerticalOptions="Center" Text="{Binding Date}" FontAttributes="Bold" TextColor="White"/>
+                        </Frame>
+                        <Label Grid.Row="1"  HorizontalOptions="Center" VerticalOptions="Center" Text="{Binding Day}" FontAttributes="Bold" TextColor="Black"/>
+                    </VerticalStackLayout>
+                    <ImageButton HorizontalOptions="Center" WidthRequest="50" Source="seta_dir_icon" Command="{Binding NextDayCommand}" Margin="10" />
+                </HorizontalStackLayout>
+
+                <VerticalStackLayout Grid.Row="2">
+                    <CollectionView ItemsSource="{Binding Match}" 
+                                EmptyView="Nenhum item encontrado"
+                                Margin="0,0"
+                                ItemsUpdatingScrollMode="KeepLastItemInView">
+                        <CollectionView.ItemsLayout>
+                            <GridItemsLayout Orientation="Vertical"/>
+                        </CollectionView.ItemsLayout>
+                        <CollectionView.Header>
+                            <Label Text="Jogos" Margin="10" HorizontalOptions="Center" FontAttributes="Bold"/>
+                        </CollectionView.Header>
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate >
+                                <Frame Padding="5" Margin="5" BackgroundColor="#34A853">
+                                    <Grid RowDefinitions="60,*">
+                                        <Grid ColumnDefinitions="*,Auto,*" >
+                                            <HorizontalStackLayout Grid.Column="0" HorizontalOptions="Center" Spacing="10">
+                                                <Label LineBreakMode="TailTruncation" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="White" Text="{Binding Info}" />
+
+                                                <Label WidthRequest="100" LineBreakMode="TailTruncation" VerticalTextAlignment="Center" HorizontalTextAlignment="End" FontAttributes="Bold" Text="{Binding Match_hometeam_name}" />
+                                                <Image Source="{Binding Team_home_badge}" VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="40" Aspect="AspectFit" />
+                                            </HorizontalStackLayout>
+
+                                            <HorizontalStackLayout Grid.Column="1" Spacing="10">
+                                                <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="{Binding Match_hometeam_score}" />
+                                                <Label Text="X" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold"/>
+                                                <Label HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="{Binding Match_awayteam_score}" />
+                                            </HorizontalStackLayout>
+
+                                            <HorizontalStackLayout Grid.Column="2" HorizontalOptions="Center" Spacing="10">
+                                                <Image Source="{Binding Team_away_badge}" WidthRequest="40"  VerticalOptions="Center" Aspect="AspectFit" HorizontalOptions="Center"/>
+                                                <Label WidthRequest="100" LineBreakMode="TailTruncation" VerticalTextAlignment="Center" HorizontalTextAlignment="Start" FontAttributes="Bold" Text="{Binding Match_awayteam_name}" />
+                                            </HorizontalStackLayout>
+                                        </Grid>
+
+                                        <CollectionView Grid.Row="1" ItemsSource="{Binding Goalscorer}">
+                                            <CollectionView.ItemTemplate>
+                                                <DataTemplate>
+                                                    <Grid ColumnDefinitions="*,Auto,*" ColumnSpacing="10" >
+                                                        <Label LineBreakMode="TailTruncation" HorizontalTextAlignment="End" VerticalTextAlignment="Center" Text="{Binding Home_scorer}" />
+                                                        <Label Grid.Column="1" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Text="{Binding Score}" FontAttributes="Bold" />
+                                                        <Label Grid.Column="2" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" Text="{Binding Away_scorer}" />
+                                                    </Grid>
+                                                </DataTemplate>
+                                            </CollectionView.ItemTemplate>
+                                        </CollectionView>
+
+                                    </Grid>
+                                </Frame>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </VerticalStackLayout>
+
+
+                <Grid Grid.Row="2" IsVisible="{Binding IsBusy}" Grid.RowSpan="3">
+                    <BoxView Color="{StaticResource White}"/>
+                    <VerticalStackLayout HorizontalOptions="Center"
+                                 VerticalOptions="Center">
+                        <ActivityIndicator IsRunning="True"
+                                   Color="#06AA48"
+                                   HorizontalOptions="Center"/>
+                        <Label Text="Carregando..." HorizontalOptions="Center"/>
+                    </VerticalStackLayout>
+                </Grid>
+
+            </Grid>
+        </ScrollView>
+    </RefreshView>
+</ContentPage>
