@@ -2,11 +2,9 @@
 
  :hammer: Funcionalidades do projeto
 
- https://github.com/Marcos-Jose-DV/AppFutebol/blob/main/AppFuteboll.png
 
 <p align="center">
-<img loading="lazy" src=" https://github.com/Marcos-Jose-DV/AppFutebol/blob/main/AppFuteboll.png
-"/>
+<img loading="lazy" src="[http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge](https://raw.githubusercontent.com/Marcos-Jose-DV/AppFutebol/main/AppFuteboll.png)"/>
 </p>
 
 
