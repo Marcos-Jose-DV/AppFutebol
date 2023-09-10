@@ -11,7 +11,7 @@
 
 :hammer: Funcionalidades do projeto
 
-- **Listagem de Jogos do Brasileirão 2023**: Exibe os jogos de futebol agendados para a data atual. Os usuários podem rolar para ver os jogos e também têm a opção de avançar ou retroceder para ver os jogos de datas anteriores ou futuros.
+- **Listagem de Jogos do Brasileirão 2023**: Exibe os jogos de futebol agendados para a data atual. Os usuários podem rolar para ver os jogos e também têm a opção de avançar ou retroceder para ver os jogos de datas anteriores ou futuras.
 
 - **Tabela do Brasileirão 2023**: Apresenta a tabela de classificação do Campeonato Brasileiro de 2023. Os usuários podem visualizar as posições das equipes, os pontos conquistados e outros detalhes importantes.
 
