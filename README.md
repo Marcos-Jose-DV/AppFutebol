@@ -18,3 +18,19 @@
 - **Artilheiros do Campeonato**: Mostra os principais artilheiros do Campeonato Brasileiro de 2023. Os usuários podem ver quem está liderando a artilharia e quantos gols cada jogador marcou.
 
 - **Controle de Data**: Permite aos usuários avançar ou retroceder na programação dos jogos, facilitando a visualização de jogos passados e futuros.
+
+:earth_americas: Endpoints da API
+
+- **Obter Principais Artilheiros (Top Scorers)**: Este endpoint permite ao aplicativo recuperar informações sobre os principais artilheiros do campeonato. Ele fornece uma lista dos jogadores que marcaram mais gols na competição, juntamente com seus nomes, equipes e a quantidade de gols que marcaram.
+
+  - Endpoint: `https://apiv3.apifootball.com/?action=get_topscorers`
+
+- **Obter Classificação (Standings)**: Este endpoint permite ao aplicativo obter a classificação atual das equipes no Campeonato Brasileiro de 2023. Ele fornece informações sobre as equipes, como posição na tabela, pontos ganhos, partidas jogadas e muito mais.
+
+  - Endpoint: `https://apiv3.apifootball.com/?action=get_standings`
+
+- **Obter Eventos de Jogos (Get Events)**: Este endpoint é usado para recuperar informações sobre os eventos de jogos de futebol agendados para uma data específica. Ele permite que o aplicativo mostre os jogos que ocorrerão em um determinado dia, incluindo detalhes como horário, equipes participantes e local.
+
+  - Endpoint: `https://apiv3.apifootball.com/?action=get_events`
+
+Para obter mais informações sobre a API e seus recursos, visite o [site oficial da API Football](https://apiv3.apifootball.com/).
