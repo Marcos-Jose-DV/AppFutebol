@@ -7,7 +7,7 @@
 
 <p>Framework que usei para criar esse app foi Net Maui, O .NET MAUI (Multi-platform App UI) é um framework de código aberto da Microsoft que permite o desenvolvimento de aplicativos multiplataforma para dispositivos móveis, desktop e web, usando uma única base de código em C#. Ele é uma evolução do Xamarin.Forms e foi projetado para simplificar ainda mais o desenvolvimento de aplicativos multiplataforma. </p>
 
-<p>Usando Net Maui usando ultilindo REST API (Representational State Transfer Application Programming Interface) é um conjunto de regras e convenções para a criação e interação com serviços web. Ela é baseada nos princípios do REST, um estilo arquitetônico de desenvolvimento de sistemas distribuídos. </p>
+<p>UUltilindo REST API (Representational State Transfer Application Programming Interface) é um conjunto de regras e convenções para a criação e interação com serviços web. Ela é baseada nos princípios do REST, um estilo arquitetônico de desenvolvimento de sistemas distribuídos. </p>
 
 :hammer: Funcionalidades do projeto
 
