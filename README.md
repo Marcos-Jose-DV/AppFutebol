@@ -7,7 +7,7 @@
 
 <p>Framework que usei para criar esse app foi Net Maui, O .NET MAUI (Multi-platform App UI) é um framework de código aberto da Microsoft que permite o desenvolvimento de aplicativos multiplataforma para dispositivos móveis, desktop e web, usando uma única base de código em C#. Ele é uma evolução do Xamarin.Forms e foi projetado para simplificar ainda mais o desenvolvimento de aplicativos multiplataforma. </p>
 
-<p>UUltilindo REST API (Representational State Transfer Application Programming Interface) é um conjunto de regras e convenções para a criação e interação com serviços web. Ela é baseada nos princípios do REST, um estilo arquitetônico de desenvolvimento de sistemas distribuídos. </p>
+<p>Ultilindo REST API (Representational State Transfer Application Programming Interface) é um conjunto de regras e convenções para a criação e interação com serviços web. Ela é baseada nos princípios do REST, um estilo arquitetônico de desenvolvimento de sistemas distribuídos. </p>
 
 :hammer: Funcionalidades do projeto
 
@@ -25,7 +25,7 @@
 
   - Endpoint: `https://apiv3.apifootball.com/?action=get_topscorers`
 
-- **Obter Classificação (Standings)**: Este endpoint permite ao aplicativo obter a classificação atual das equipes no Campeonato Brasileiro de 2023. Ele fornece informações sobre as equipes, como posição na tabela, pontos ganhos, partidas jogadas e muito mais.
+- **Obter Classificação (Standings)**: Este endpoint permite ao aplicativo obter a classificação atual das equipes no Campeonato que quiser. Ele fornece informações sobre as equipes, como posição na tabela, pontos ganhos, partidas jogadas e muito mais.
 
   - Endpoint: `https://apiv3.apifootball.com/?action=get_standings`
 
