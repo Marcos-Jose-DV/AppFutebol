@@ -28,4 +28,4 @@ hammer: Funcionalidades do projeto
 
   - Endpoint: `https://apiv3.apifootball.com/?action=get_standings`
 
-Para obter mais informações sobre a API e seus recursos, visite o [site oficial da API openweathermap](https://apiv3.apifootball.com).
+Para obter mais informações sobre a API e seus recursos, visite o [site oficial da API openweathermap](https://apiv3.apifootball.com/?action=get/).
