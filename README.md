@@ -27,3 +27,5 @@ hammer: Funcionalidades do projeto
 - **Obter Classificação (Standings)**: Este endpoint permite ao aplicativo obter a classificação atual das equipes no Campeonato que quiser. Ele fornece informações sobre as equipes, como posição na tabela, pontos ganhos, partidas jogadas e muito mais.
 
   - Endpoint: `https://apiv3.apifootball.com/?action=get_standings`
+
+Para obter mais informações sobre a API e seus recursos, visite o [site oficial da API openweathermap](https://apiv3.apifootball.com).
