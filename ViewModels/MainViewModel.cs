@@ -1,6 +1,9 @@
 ﻿using AppFutebol.Controlls;
+using AppFutebol.Models;
+using AppFutebol.Services;
 using CommunityToolkit.Mvvm.ComponentModel;
 using System.Windows.Input;
+using AppFutebol.Constants;
 
 namespace AppFutebol.ViewModels;
 
@@ -9,7 +12,7 @@ public partial class MainViewModel : ObservableObject
     private readonly IRestService _service;
 
     [ObservableProperty]
-    public Match[] _match;
+    public Matchs[] _matchs;
 
     [ObservableProperty]
     private bool _isBusy = true;
@@ -39,13 +42,13 @@ public partial class MainViewModel : ObservableObject
 
     private void BackDay()
     {
-        Match = null;
+        Matchs = null;
         var date = DateTime.Parse(DateNow).AddDays(-1);
         NewDateTime(date.ToString("yyyy-MM-dd"));
     }
     private void NextDay()
     {
-        Match = null;
+        Matchs = null;
         var date = DateTime.Parse(DateNow).AddDays(1);
         NewDateTime(date.ToString("yyyy-MM-dd"));
     }
@@ -64,8 +67,8 @@ public partial class MainViewModel : ObservableObject
     {
         try
         {
-            Match[] match = await _service.GetMatchData(GenerateRequestURL(Constants.Opefootball));
-            Match = match;
+            Matchs[] match = await _service.GetMatchData(GenerateRequestURL(Constant.Opefootball));
+            Matchs = match;
         }
         finally
         {
@@ -82,7 +85,7 @@ public partial class MainViewModel : ObservableObject
         requestUri += $"&from={DateNow}";
         requestUri += $"&to={DateNow}";
         requestUri += $"&country_id=27";
-        requestUri += $"&APIkey={Constants.OpeFootballKey}";
+        requestUri += $"&APIkey={Constant.OpeFootballKey}";
         requestUri += $"&timezone=America/Sao_Paulo";
 
         return requestUri;

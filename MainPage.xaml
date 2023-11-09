@@ -7,7 +7,6 @@
     <RefreshView IsRefreshing="False" >
         <ScrollView>
             <Grid RowDefinitions="Auto,100,*" Margin="0,20">
-                <SearchBar SearchCommand="{Binding SearchCommand}" TextChanged="{Binding TextChanged }" Margin="0,10,0,20" HorizontalOptions="CenterAndExpand" Placeholder="pesquise cameonato"/>
                 <HorizontalStackLayout Margin="0,-20" Grid.Row="1" HorizontalOptions="Center" Spacing="20">
                     <ImageButton Grid.Column="0" Margin="10" WidthRequest="50" Source="seta_esq_icon" Command="{Binding BackDayCommand}"/>
                     <VerticalStackLayout VerticalOptions="Center" Spacing="10">
@@ -21,7 +20,7 @@
                 </HorizontalStackLayout>
 
                 <VerticalStackLayout Grid.Row="2">
-                    <CollectionView ItemsSource="{Binding Match}" 
+                    <CollectionView ItemsSource="{Binding Matchs}" 
                                 EmptyView="Nenhum item encontrado"
                                 Margin="0,0"
                                 ItemsUpdatingScrollMode="KeepLastItemInView">
