@@ -8,7 +8,7 @@ App feito em Net Maui usando Api Rest para consumir dados de jogos e jogadores d
 
 <p>Ultilindo REST API (Representational State Transfer Application Programming Interface) é um conjunto de regras e convenções para a criação e interação com serviços web. Ela é baseada nos princípios do REST, um estilo arquitetônico de desenvolvimento de sistemas distribuídos. </p>
 
-hammer: Funcionalidades do projeto
+🔨: Funcionalidades do projeto
 
 - **Listagem de Jogos do Brasileirão 2023**: Exibe os jogos de futebol agendados para a data atual. Os usuários podem rolar para ver os jogos e também têm a opção de avançar ou retroceder para ver os jogos de datas anteriores ou futuras.
 
